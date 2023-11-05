@@ -59,7 +59,6 @@ const sketch = (p: p5) => {
   const cells: Cell[][] = [];
 
   p.setup = () => {
-    console.log("final size", width, height);
     p.createCanvas(width, height);
     p.background(0, 0, 0);
 
