@@ -1,21 +1,4 @@
-import p5 from "p5";
-
-type Alba = typeof window & {
-  alba: {
-    params: {
-      seed: string;
-      tokenId: number;
-      width?: number;
-      isRenderer: boolean;
-    };
-    isComplete: () => boolean;
-    setComplete: (a: boolean) => void;
-    getMetadata: () => Record<string, any>;
-    setMetadata: (a: Record<string, any>) => void;
-    prng: (seed: string) => () => number;
-    _testSeed: () => string;
-  };
-};
+import { Alba, p5 } from "./types";
 
 const randomChoice = <T>(p: p5, arr: T[]): T => {
   const index = Math.floor(p.random(0, arr.length));
@@ -114,4 +97,4 @@ const sketch = (p: p5) => {
   };
 };
 
-new p5(sketch);
+new window.p5(sketch);

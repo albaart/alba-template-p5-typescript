@@ -6,8 +6,7 @@
     "start": "parcel index.html",
     "example": "parcel example.html",
     "clean": "rimraf dist .parcel-cache",
-    "build": "npm run clean && parcel build index.html && npm run hack-import",
-    "hack-import": "sed -i.bak -E 's|import (.*) from\"p5\"|let \\1=window.p5|g' dist/*.js && rm dist/*.bak"
+    "build": "npm run clean && parcel build index.html"
   },
   "devDependencies": {
     "@parcel/optimizer-esbuild": "^2.10.2",
