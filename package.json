@@ -1,0 +1,31 @@
+{
+  "name": "alba-template-p5-typescript",
+  "version": "1.0.0",
+  "description": "A template for creating p5.js sketches with TypeScript",
+  "scripts": {
+    "start": "parcel index.html",
+    "example": "parcel example.html",
+    "clean": "rimraf dist .parcel-cache",
+    "build": "npm run clean && parcel build index.html && npm run hack-import",
+    "hack-import": "sed -i.bak -E 's|import (.*) from\"p5\"|let \\1=window.p5|g' dist/*.js && rm dist/*.bak"
+  },
+  "devDependencies": {
+    "@parcel/optimizer-esbuild": "^2.10.2",
+    "@types/p5": "^1.5.0",
+    "parcel": "^2.10.2",
+    "rimraf": "^5.0.5"
+  },
+  "dependencies": {
+    "p5": "^1.5.0"
+  },
+  "targets": {
+    "default": {
+      "context": "browser",
+      "optimize": true,
+      "includeNodeModules": {
+        "p5": false
+      },
+      "sourceMap": false
+    }
+  }
+}
