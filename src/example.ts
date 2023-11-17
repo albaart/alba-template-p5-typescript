@@ -1,9 +1,5 @@
 import { Alba, p5 } from "./types";
-
-const randomChoice = <T>(p: p5, arr: T[]): T => {
-  const index = Math.floor(p.random(0, arr.length));
-  return arr[index];
-};
+import { randomChoice } from "./example/utils";
 
 const ASPECT_RATIO = 4 / 5;
 
